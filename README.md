@@ -1,10 +1,12 @@
 # Bright Tax Solutions — Site Revamp
 
-A redesign of brighttaxfl.com styled after the "Neuralyn" dark landing-page
-theme (motionsites.ai): pure-black monochrome palette, Inter + Instrument
-Serif italic accents, liquid-glass UI, Framer Motion parallax hero over
-video, and a scroll-driven word-reveal testimonial — while keeping all of
-Bright Tax's real content (services, stats, process, contact, portal).
+A redesign of brighttaxfl.com. Structure and motion language take cues from
+the "Neuralyn" landing-page theme (motionsites.ai) — liquid-glass UI, Framer
+Motion parallax hero over video, scroll-driven word-reveal testimonial — but
+reworked into Bright Tax's own light identity: white monochrome palette with
+a warm gold accent, Inter + Instrument Serif italic accents, and a
+light-inverted hero video. All of Bright Tax's real content is kept
+(services, stats, process, contact, portal).
 
 **Stack:** React + TypeScript + Vite + Tailwind CSS v4 + Framer Motion.
 
@@ -22,11 +24,13 @@ npm run dev
   and [`src/components/Footer.tsx`](src/components/Footer.tsx). Replace both
   with the real external portal URL.
 - **Placeholder assets** in `public/` — swap for real ones:
-  `logo.svg`, `hero-dashboard.svg` (dashboard mockup shown over the hero
-  video with luminosity blend), `testimonial-avatar.svg`.
+  `logo.svg`, `hero-dashboard.svg` (light dashboard mockup shown over the
+  hero video), `testimonial-avatar.svg`.
 - **Hero video**: streams from the theme's CDN URL in
-  [`src/components/Hero.tsx`](src/components/Hero.tsx) — replace with your
-  own hosted video before production.
+  [`src/components/Hero.tsx`](src/components/Hero.tsx), lightened via a CSS
+  invert filter — replace with your own (ideally natively light) hosted
+  video before production, and remove the `filter` style if the footage is
+  already light.
 - **Copy**: services, stats, and contact details reflect the real Bright Tax
   Solutions business but have been rewritten — review before publishing.
 

@@ -17,7 +17,7 @@ export default function BlogPreview() {
             </p>
             <h2 className="mt-4 text-4xl font-medium tracking-[-1px] text-foreground sm:text-5xl">
               Tax insight, in{" "}
-              <span className="font-serif font-normal italic">plain</span>{" "}
+              <span className="font-serif font-normal italic text-accent">plain</span>{" "}
               English.
             </h2>
           </div>

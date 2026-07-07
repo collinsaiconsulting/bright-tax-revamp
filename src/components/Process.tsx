@@ -17,8 +17,8 @@ export default function Process() {
           </p>
           <h2 className="mt-4 max-w-2xl text-4xl font-medium tracking-[-1px] text-foreground sm:text-5xl">
             A process built for{" "}
-            <span className="font-serif font-normal italic">clarity</span>, not
-            paperwork.
+            <span className="font-serif font-normal italic text-accent">clarity</span>,
+            not paperwork.
           </h2>
         </ScrollReveal>
 

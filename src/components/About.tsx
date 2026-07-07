@@ -25,7 +25,7 @@ export default function About() {
           </p>
           <h2 className="mt-4 text-4xl font-medium leading-tight tracking-[-1px] text-foreground sm:text-5xl">
             A firm built on{" "}
-            <span className="font-serif font-normal italic">trust</span>,
+            <span className="font-serif font-normal italic text-accent">trust</span>,
             decades in the making.
           </h2>
           <p className="mt-6 text-muted-foreground">
@@ -60,7 +60,7 @@ export default function About() {
             className="absolute inset-0 rounded-2xl opacity-60"
             style={{
               backgroundImage:
-                "radial-gradient(circle at 25% 20%, rgba(255,255,255,0.10), transparent 55%), radial-gradient(circle at 80% 80%, rgba(255,255,255,0.06), transparent 60%)",
+                "radial-gradient(circle at 25% 20%, hsl(38 95% 55% / 0.14), transparent 55%), radial-gradient(circle at 80% 80%, rgba(0,0,0,0.05), transparent 60%)",
             }}
           />
           <div className="absolute inset-x-8 bottom-8 rounded-xl border border-border bg-background/60 p-6 backdrop-blur-md">

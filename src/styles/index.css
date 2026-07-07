@@ -1,22 +1,26 @@
 @import "tailwindcss";
 
-/* Neuralyn-style dark monochrome theme (motionsites.ai spec), applied to
-   Bright Tax Solutions. All colors HSL, dark mode by default. */
+/* "Bright" light theme — white monochrome base warmed by a sun accent.
+   Derived from the Neuralyn structure but inverted + sun-branded so the
+   design is Bright Tax's own. All colors HSL. */
 @theme {
-  --color-background: hsl(0 0% 0%);
-  --color-foreground: hsl(0 0% 100%);
-  --color-muted-foreground: hsl(0 0% 65%);
-  --color-card: hsl(0 0% 5%);
-  --color-border: hsl(0 0% 20%);
-  --color-hero-subtitle: hsl(210 17% 95%);
+  --color-background: hsl(0 0% 100%);
+  --color-foreground: hsl(0 0% 4%);
+  --color-muted-foreground: hsl(0 0% 42%);
+  --color-card: hsl(0 0% 98%);
+  --color-border: hsl(0 0% 88%);
+  --color-hero-subtitle: hsl(215 15% 25%);
+  /* sun accent — golden, used for the corner sun + italic accent words */
+  --color-sun: hsl(38 95% 55%);
+  --color-accent: hsl(35 85% 38%);
 
   --font-sans: "Inter", system-ui, -apple-system, sans-serif;
   --font-serif: "Instrument Serif", Georgia, serif;
 }
 
 :root {
-  --hero-subtitle: hsl(210 17% 95%);
-  color-scheme: dark;
+  --hero-subtitle: hsl(215 15% 25%);
+  color-scheme: light;
   scroll-behavior: smooth;
 }
 
@@ -31,8 +35,8 @@ body {
 }
 
 body {
-  background: hsl(0 0% 0%);
-  color: hsl(0 0% 100%);
+  background: hsl(0 0% 100%);
+  color: hsl(0 0% 4%);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
@@ -55,14 +59,15 @@ body {
   }
 }
 
-/* ---------- Liquid glass (per spec) ---------- */
+/* ---------- Liquid glass (light adaptation) ---------- */
 .liquid-glass {
-  background: rgba(255, 255, 255, 0.01);
-  background-blend-mode: luminosity;
+  background: rgba(0, 0, 0, 0.02);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   border: none;
-  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1);
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.8),
+    0 1px 3px rgba(0, 0, 0, 0.06);
   position: relative;
   overflow: hidden;
 }
@@ -73,9 +78,9 @@ body {
   border-radius: inherit;
   padding: 1.4px;
   background: linear-gradient(180deg,
-    rgba(255,255,255,0.45) 0%, rgba(255,255,255,0.15) 20%,
-    rgba(255,255,255,0) 40%, rgba(255,255,255,0) 60%,
-    rgba(255,255,255,0.15) 80%, rgba(255,255,255,0.45) 100%);
+    rgba(0,0,0,0.22) 0%, rgba(0,0,0,0.08) 20%,
+    rgba(0,0,0,0) 40%, rgba(0,0,0,0) 60%,
+    rgba(0,0,0,0.08) 80%, rgba(0,0,0,0.22) 100%);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
@@ -100,9 +105,9 @@ body {
 
 /* Scrollbar polish */
 ::-webkit-scrollbar { width: 10px; }
-::-webkit-scrollbar-track { background: hsl(0 0% 4%); }
+::-webkit-scrollbar-track { background: hsl(0 0% 96%); }
 ::-webkit-scrollbar-thumb {
-  background: hsl(0 0% 25%);
+  background: hsl(0 0% 74%);
   border-radius: 999px;
-  border: 2px solid hsl(0 0% 4%);
+  border: 2px solid hsl(0 0% 96%);
 }

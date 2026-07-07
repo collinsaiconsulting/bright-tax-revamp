@@ -52,7 +52,10 @@ export default function Hero() {
           Your Taxes.
           <br />
           One Clear{" "}
-          <span className="font-serif font-normal italic">Overview</span>.
+          <span className="font-serif font-normal italic text-accent">
+            Overview
+          </span>
+          .
         </motion.h1>
 
         <motion.p
@@ -88,6 +91,7 @@ export default function Hero() {
         className="relative z-10 mt-12 w-screen"
         style={{ marginLeft: "calc(-50vw + 50%)", aspectRatio: "16/9" }}
       >
+        {/* light version of the background video: inverted + softly veiled */}
         <video
           src={VIDEO_URL}
           autoPlay
@@ -95,7 +99,9 @@ export default function Hero() {
           loop
           playsInline
           className="absolute inset-0 h-full w-full object-cover"
+          style={{ filter: "invert(1) hue-rotate(180deg) brightness(1.08)" }}
         />
+        <div className="absolute inset-0 bg-white/35" />
         <motion.div
           style={{ y: dashY }}
           className="absolute inset-0 z-20 flex items-center justify-center"
@@ -103,11 +109,12 @@ export default function Hero() {
           <img
             src="/hero-dashboard.svg"
             alt="Bright Tax client dashboard preview"
-            className="w-[90%] max-w-5xl rounded-2xl"
-            style={{ mixBlendMode: "luminosity" }}
+            className="w-[90%] max-w-5xl rounded-2xl shadow-[0_40px_90px_-30px_rgba(0,0,0,0.45)] ring-1 ring-black/10"
             draggable={false}
           />
         </motion.div>
+        {/* soft white fades so the dark video band sits gently in the light page */}
+        <div className="pointer-events-none absolute left-0 right-0 top-0 z-30 h-48 bg-gradient-to-b from-background via-background/70 to-transparent" />
         <div className="pointer-events-none absolute bottom-0 left-0 right-0 z-30 h-40 bg-gradient-to-t from-background to-transparent" />
       </motion.div>
     </section>

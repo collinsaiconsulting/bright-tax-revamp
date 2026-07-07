@@ -22,8 +22,8 @@ function Word({
 }) {
   const opacity = useTransform(progress, range, [0.2, 1]);
   const color = useTransform(progress, range, [
-    "hsl(0 0% 35%)",
-    "hsl(0 0% 100%)",
+    "hsl(0 0% 78%)",
+    "hsl(0 0% 8%)",
   ]);
   return (
     <motion.span style={{ opacity, color }} className="mr-[0.3em]">
@@ -50,7 +50,7 @@ export default function Testimonials() {
         <div ref={containerRef} className="flex flex-col items-start gap-10">
           <span
             aria-hidden="true"
-            className="font-serif text-7xl leading-none text-foreground"
+            className="font-serif text-7xl leading-none text-accent"
           >
             &ldquo;
           </span>

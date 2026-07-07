@@ -22,8 +22,8 @@ export default function Services() {
           </p>
           <h2 className="mt-4 max-w-2xl text-4xl font-medium tracking-[-1px] text-foreground sm:text-5xl">
             Every service,{" "}
-            <span className="font-serif font-normal italic">clear</span> at a
-            glance.
+            <span className="font-serif font-normal italic text-accent">clear</span>{" "}
+            at a glance.
           </h2>
           <p className="mt-4 max-w-xl text-muted-foreground">
             From first-year founders to decades-old practices, our nine
@@ -41,7 +41,7 @@ export default function Services() {
             >
               <div
                 className="pointer-events-none absolute -right-6 -top-6 h-24 w-24 rounded-full opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100"
-                style={{ background: "radial-gradient(circle, rgba(255,255,255,0.15), transparent 70%)" }}
+                style={{ background: "radial-gradient(circle, hsl(38 95% 55% / 0.22), transparent 70%)" }}
               />
               <span className="flex h-11 w-11 items-center justify-center rounded-xl border border-border bg-background text-lg text-foreground transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6">
                 {sector.icon}

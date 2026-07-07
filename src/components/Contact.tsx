@@ -6,7 +6,7 @@ export default function Contact() {
     <section id="contact" className="relative overflow-hidden bg-background px-8 py-28 md:px-28">
       <div
         className="pointer-events-none absolute -right-40 -top-20 h-[28rem] w-[28rem] rounded-full opacity-40 blur-3xl"
-        style={{ background: "radial-gradient(circle, rgba(255,255,255,0.08), transparent 70%)" }}
+        style={{ background: "radial-gradient(circle, hsl(38 95% 55% / 0.18), transparent 70%)" }}
       />
       <div className="relative mx-auto grid max-w-6xl gap-16 lg:grid-cols-2">
         <ScrollReveal>
@@ -15,8 +15,8 @@ export default function Contact() {
           </p>
           <h2 className="mt-4 text-4xl font-medium tracking-[-1px] text-foreground sm:text-5xl">
             Ready for a tax plan that works as{" "}
-            <span className="font-serif font-normal italic">hard</span> as you
-            do?
+            <span className="font-serif font-normal italic text-accent">hard</span>{" "}
+            as you do?
           </h2>
           <p className="mt-6 max-w-md text-muted-foreground">
             Reach out for a consultation — we respond within one business day,
