@@ -3,10 +3,12 @@
 A redesign of brighttaxfl.com. Structure and motion language take cues from
 the "Neuralyn" landing-page theme (motionsites.ai) — liquid-glass UI, Framer
 Motion parallax hero over video, scroll-driven word-reveal testimonial — but
-reworked into Bright Tax's own light identity: white monochrome palette with
-a warm gold accent, Inter + Instrument Serif italic accents, and a
-light-inverted hero video. All of Bright Tax's real content is kept
-(services, stats, process, contact, portal).
+reworked into Bright Tax's own light identity: a **Deep Plum & Champagne**
+palette (warm cream base, deep plum ink, champagne-rose accent with soft rose
+glows), Inter + Instrument Serif italic accents, and a light-inverted hero
+video. All of Bright Tax's real content is kept (services, stats, process,
+contact, portal). All cards, buttons, inputs, and containers use a soft
+rounded (24px) radius scale.
 
 **Stack:** React + TypeScript + Vite + Tailwind CSS v4 + Framer Motion.
 
@@ -19,10 +21,11 @@ npm run dev
 
 ## Before going live
 
-- **Client Portal link**: `CLIENT_PORTAL_URL` is a placeholder
-  (`#client-portal-placeholder`) in [`src/components/Navbar.tsx`](src/components/Navbar.tsx)
-  and [`src/components/Footer.tsx`](src/components/Footer.tsx). Replace both
-  with the real external portal URL.
+- **Client Portal link**: `CLIENT_PORTAL_URL` is wired to the real ShareFile
+  portal (`https://btfclients.sharefile.com/`) in
+  [`src/components/Navbar.tsx`](src/components/Navbar.tsx) and
+  [`src/components/Footer.tsx`](src/components/Footer.tsx), opening in a new tab.
+  Update both if the portal URL changes.
 - **Placeholder assets** in `public/` — swap for real ones:
   `logo.svg`, `hero-dashboard.svg` (light dashboard mockup shown over the
   hero video), `testimonial-avatar.svg`.

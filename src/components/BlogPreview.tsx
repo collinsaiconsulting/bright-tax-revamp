@@ -28,7 +28,7 @@ export default function BlogPreview() {
             <ScrollReveal
               key={post.title}
               delay={((i % 3) + 1) as 1 | 2 | 3}
-              className="group cursor-pointer rounded-2xl border border-border bg-card p-7 transition-all duration-500 hover:-translate-y-1.5 hover:border-foreground/40"
+              className="group cursor-pointer rounded-3xl border border-border bg-card p-7 transition-all duration-500 hover:-translate-y-1.5 hover:border-foreground/40"
             >
               <span className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
                 {post.tag}

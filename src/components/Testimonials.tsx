@@ -22,8 +22,8 @@ function Word({
 }) {
   const opacity = useTransform(progress, range, [0.2, 1]);
   const color = useTransform(progress, range, [
-    "hsl(0 0% 78%)",
-    "hsl(0 0% 8%)",
+    "hsl(32 12% 74%)",
+    "hsl(287 39% 14%)",
   ]);
   return (
     <motion.span style={{ opacity, color }} className="mr-[0.3em]">
@@ -91,7 +91,7 @@ export default function Testimonials() {
             <ScrollReveal
               key={r.name}
               delay={((i % 3) + 1) as 1 | 2 | 3}
-              className="rounded-2xl border border-border bg-card p-6"
+              className="rounded-3xl border border-border bg-card p-6"
             >
               <p className="font-serif text-lg italic leading-relaxed text-foreground/90">
                 “{r.quote}”

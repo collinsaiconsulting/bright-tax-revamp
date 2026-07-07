@@ -1,5 +1,4 @@
-// TODO: replace with the real external client portal URL when available.
-const CLIENT_PORTAL_URL = "#client-portal-placeholder";
+const CLIENT_PORTAL_URL = "https://btfclients.sharefile.com/";
 
 const LINKS = [
   { label: "Home", href: "#home" },
@@ -38,7 +37,7 @@ export default function Navbar() {
             <a
               key={link.label}
               href={link.href}
-              className="flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+              className="flex items-center gap-1 rounded-full px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
             >
               {link.label}
               {link.chevron && <ChevronDown />}
@@ -51,7 +50,7 @@ export default function Navbar() {
         href={CLIENT_PORTAL_URL}
         target="_blank"
         rel="noopener noreferrer"
-        className="rounded-lg bg-foreground px-4 py-2 text-sm font-semibold text-background transition-opacity hover:opacity-85"
+        className="rounded-full bg-foreground px-5 py-2 text-sm font-semibold text-background transition-opacity hover:opacity-85"
       >
         Client Portal
       </a>

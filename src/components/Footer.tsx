@@ -1,4 +1,4 @@
-const CLIENT_PORTAL_URL = "#client-portal-placeholder"; // TODO: swap for real portal URL
+const CLIENT_PORTAL_URL = "https://btfclients.sharefile.com/";
 
 export default function Footer() {
   return (

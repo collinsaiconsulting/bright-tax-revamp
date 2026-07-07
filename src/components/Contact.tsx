@@ -6,7 +6,7 @@ export default function Contact() {
     <section id="contact" className="relative overflow-hidden bg-background px-8 py-28 md:px-28">
       <div
         className="pointer-events-none absolute -right-40 -top-20 h-[28rem] w-[28rem] rounded-full opacity-40 blur-3xl"
-        style={{ background: "radial-gradient(circle, hsl(38 95% 55% / 0.18), transparent 70%)" }}
+        style={{ background: "radial-gradient(circle, var(--glow), transparent 70%)" }}
       />
       <div className="relative mx-auto grid max-w-6xl gap-16 lg:grid-cols-2">
         <ScrollReveal>
@@ -46,7 +46,7 @@ export default function Contact() {
         <ScrollReveal delay={2}>
           <form
             onSubmit={(e) => e.preventDefault()}
-            className="space-y-5 rounded-2xl border border-border bg-card p-8"
+            className="space-y-5 rounded-3xl border border-border bg-card p-8"
           >
             {["Full name", "Email address", "Phone number"].map((label) => (
               <div key={label}>
@@ -55,7 +55,7 @@ export default function Contact() {
                 </label>
                 <input
                   type="text"
-                  className="w-full rounded-xl border border-border bg-background px-4 py-3 text-foreground outline-none transition-colors placeholder:text-muted-foreground/40 focus:border-foreground/60"
+                  className="w-full rounded-2xl border border-border bg-background px-4 py-3 text-foreground outline-none transition-colors placeholder:text-muted-foreground/40 focus:border-foreground/60"
                   placeholder={label}
                 />
               </div>
@@ -66,7 +66,7 @@ export default function Contact() {
               </label>
               <textarea
                 rows={4}
-                className="w-full rounded-xl border border-border bg-background px-4 py-3 text-foreground outline-none transition-colors placeholder:text-muted-foreground/40 focus:border-foreground/60"
+                className="w-full rounded-2xl border border-border bg-background px-4 py-3 text-foreground outline-none transition-colors placeholder:text-muted-foreground/40 focus:border-foreground/60"
                 placeholder="Tell us about your business or tax question"
               />
             </div>

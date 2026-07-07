@@ -23,7 +23,7 @@ function Stat({ value, suffix, label }: (typeof STATS)[number]) {
 export default function TrustStats() {
   return (
     <section className="relative z-10 bg-background px-8 py-16 md:px-28">
-      <div className="mx-auto grid max-w-6xl grid-cols-2 gap-8 rounded-2xl border border-border bg-card px-8 py-10 sm:grid-cols-4">
+      <div className="mx-auto grid max-w-6xl grid-cols-2 gap-8 rounded-3xl border border-border bg-card px-8 py-10 sm:grid-cols-4">
         {STATS.map((stat) => (
           <Stat key={stat.label} {...stat} />
         ))}

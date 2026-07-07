@@ -33,9 +33,9 @@ export default function Hero() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0 }}
-          className="liquid-glass mb-6 flex items-center gap-2 rounded-lg px-3 py-2"
+          className="liquid-glass mb-6 flex items-center gap-2 rounded-full px-4 py-2"
         >
-          <span className="rounded-md bg-foreground px-2 py-0.5 text-sm font-medium text-background">
+          <span className="rounded-full bg-foreground px-2.5 py-0.5 text-sm font-medium text-background">
             New
           </span>
           <span className="text-sm font-medium text-muted-foreground">
@@ -83,15 +83,15 @@ export default function Hero() {
         </motion.a>
       </motion.div>
 
-      {/* Dashboard + video area — full viewport width */}
+      {/* Dashboard + video area — inset rounded media card */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.4 }}
-        className="relative z-10 mt-12 w-screen"
-        style={{ marginLeft: "calc(-50vw + 50%)", aspectRatio: "16/9" }}
+        className="relative z-10 mx-auto mt-12 w-[94%] max-w-[1400px] overflow-hidden rounded-[2.5rem]"
+        style={{ aspectRatio: "16/9" }}
       >
-        {/* light version of the background video: inverted + softly veiled */}
+        {/* light version of the background video: inverted + cream/rose-warmed */}
         <video
           src={VIDEO_URL}
           autoPlay
@@ -99,9 +99,9 @@ export default function Hero() {
           loop
           playsInline
           className="absolute inset-0 h-full w-full object-cover"
-          style={{ filter: "invert(1) hue-rotate(180deg) brightness(1.08)" }}
+          style={{ filter: "invert(1) hue-rotate(155deg) brightness(1.1) sepia(0.22) saturate(0.85)" }}
         />
-        <div className="absolute inset-0 bg-white/35" />
+        <div className="absolute inset-0 bg-background/40" />
         <motion.div
           style={{ y: dashY }}
           className="absolute inset-0 z-20 flex items-center justify-center"
@@ -109,7 +109,7 @@ export default function Hero() {
           <img
             src="/hero-dashboard.svg"
             alt="Bright Tax client dashboard preview"
-            className="w-[90%] max-w-5xl rounded-2xl shadow-[0_40px_90px_-30px_rgba(0,0,0,0.45)] ring-1 ring-black/10"
+            className="w-[90%] max-w-5xl rounded-3xl shadow-[0_40px_90px_-30px_rgba(30,12,36,0.45)] ring-1 ring-foreground/10"
             draggable={false}
           />
         </motion.div>

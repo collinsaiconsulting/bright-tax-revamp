@@ -53,17 +53,17 @@ export default function About() {
           ref={tiltRef}
           onPointerMove={handleMove}
           onPointerLeave={handleLeave}
-          className="relative aspect-[4/5] w-full rounded-2xl border border-border bg-card transition-transform duration-300 ease-out will-change-transform"
+          className="relative aspect-[4/5] w-full rounded-3xl border border-border bg-card transition-transform duration-300 ease-out will-change-transform"
           style={{ transformStyle: "preserve-3d" }}
         >
           <div
-            className="absolute inset-0 rounded-2xl opacity-60"
+            className="absolute inset-0 rounded-3xl opacity-60"
             style={{
               backgroundImage:
-                "radial-gradient(circle at 25% 20%, hsl(38 95% 55% / 0.14), transparent 55%), radial-gradient(circle at 80% 80%, rgba(0,0,0,0.05), transparent 60%)",
+                "radial-gradient(circle at 25% 20%, hsl(12 62% 64% / 0.16), transparent 55%), radial-gradient(circle at 80% 80%, hsl(287 39% 14% / 0.05), transparent 60%)",
             }}
           />
-          <div className="absolute inset-x-8 bottom-8 rounded-xl border border-border bg-background/60 p-6 backdrop-blur-md">
+          <div className="absolute inset-x-8 bottom-8 rounded-2xl border border-border bg-background/60 p-6 backdrop-blur-md">
             <p className="font-serif text-2xl italic text-foreground">
               "We treat every return like it's the only one that matters."
             </p>

@@ -37,13 +37,13 @@ export default function Services() {
             <ScrollReveal
               key={sector.name}
               delay={((i % 3) + 1) as 1 | 2 | 3}
-              className="group relative overflow-hidden rounded-2xl border border-border bg-card p-7 transition-all duration-500 hover:-translate-y-1.5 hover:border-foreground/40"
+              className="group relative overflow-hidden rounded-3xl border border-border bg-card p-7 transition-all duration-500 hover:-translate-y-1.5 hover:border-foreground/40"
             >
               <div
                 className="pointer-events-none absolute -right-6 -top-6 h-24 w-24 rounded-full opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100"
-                style={{ background: "radial-gradient(circle, hsl(38 95% 55% / 0.22), transparent 70%)" }}
+                style={{ background: "radial-gradient(circle, var(--glow), transparent 70%)" }}
               />
-              <span className="flex h-11 w-11 items-center justify-center rounded-xl border border-border bg-background text-lg text-foreground transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6">
+              <span className="flex h-11 w-11 items-center justify-center rounded-2xl border border-border bg-background text-lg text-foreground transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6">
                 {sector.icon}
               </span>
               <h3 className="mt-5 text-xl font-semibold text-foreground">
