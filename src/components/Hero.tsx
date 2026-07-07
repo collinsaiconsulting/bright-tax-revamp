@@ -1,102 +1,115 @@
 import { useRef } from "react";
-import { useParallax } from "../hooks/useParallax";
-import { AnimatedButton } from "./ui/AnimatedButton";
+import { motion, useScroll, useTransform } from "framer-motion";
+import Navbar from "./Navbar";
+
+const VIDEO_URL =
+  "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260307_083826_e938b29f-a43a-41ec-a153-3d4730578ab8.mp4";
 
 export default function Hero() {
-  const sectionRef = useRef<HTMLElement | null>(null);
-  useParallax(sectionRef);
+  const sectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"],
+  });
+
+  const textY = useTransform(scrollYProgress, [0, 1], [0, -200]);
+  const textOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+  const dashY = useTransform(scrollYProgress, [0, 1], [0, -250]);
 
   return (
     <section
       id="home"
-      ref={sectionRef as never}
-      className="relative flex min-h-[100svh] items-center overflow-hidden bg-[var(--color-forest-950)] pt-24"
+      ref={sectionRef}
+      className="relative min-h-screen overflow-hidden bg-background"
     >
-      {/* Generative abstract background — no stock photography needed */}
-      <div className="pointer-events-none absolute inset-0">
-        <div
-          data-depth="0.35"
-          className="blob-a absolute -left-40 -top-32 h-[36rem] w-[36rem] rounded-full opacity-60 blur-3xl"
-          style={{
-            background:
-              "radial-gradient(circle at 30% 30%, rgba(47,98,73,0.9), rgba(47,98,73,0) 70%)",
-          }}
-        />
-        <div
-          data-depth="0.5"
-          className="blob-b absolute -right-32 top-10 h-[30rem] w-[30rem] rounded-full opacity-50 blur-3xl"
-          style={{
-            background:
-              "radial-gradient(circle at 60% 40%, rgba(201,154,68,0.55), rgba(201,154,68,0) 70%)",
-          }}
-        />
-        <div
-          data-depth="0.2"
-          className="blob-c absolute bottom-[-10rem] left-1/3 h-[34rem] w-[34rem] rounded-full opacity-40 blur-3xl"
-          style={{
-            background:
-              "radial-gradient(circle at 50% 50%, rgba(232,207,159,0.4), rgba(232,207,159,0) 70%)",
-          }}
-        />
-        {/* fine grid for texture */}
-        <div
-          className="absolute inset-0 opacity-[0.06]"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(250,246,238,0.6) 1px, transparent 1px), linear-gradient(90deg, rgba(250,246,238,0.6) 1px, transparent 1px)",
-            backgroundSize: "48px 48px",
-          }}
-        />
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(to top, rgba(12,31,24,0.95) 0%, rgba(12,31,24,0.2) 55%, rgba(12,31,24,0.6) 100%)",
-          }}
-        />
-      </div>
+      <Navbar />
 
-      {/* floating accent shapes */}
-      <div
-        data-depth="0.7"
-        className="float-slow pointer-events-none absolute right-[12%] top-[28%] hidden h-16 w-16 rotate-12 rounded-2xl border border-[var(--color-brass-400)]/40 bg-white/5 backdrop-blur-sm md:block"
-      />
-      <div
-        data-depth="0.9"
-        className="float-slow pointer-events-none absolute right-[22%] top-[55%] hidden h-10 w-10 rounded-full border border-[var(--color-brass-300)]/50 bg-white/5 backdrop-blur-sm md:block"
-        style={{ animationDelay: "1.4s" }}
-      />
+      {/* Hero content */}
+      <motion.div
+        style={{ y: textY, opacity: textOpacity }}
+        className="relative z-20 mt-16 flex flex-col items-center px-4 text-center md:mt-20"
+      >
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0 }}
+          className="liquid-glass mb-6 flex items-center gap-2 rounded-lg px-3 py-2"
+        >
+          <span className="rounded-md bg-foreground px-2 py-0.5 text-sm font-medium text-background">
+            New
+          </span>
+          <span className="text-sm font-medium text-muted-foreground">
+            Say Hello to the Bright Tax Client Portal
+          </span>
+        </motion.div>
 
-      <div className="relative z-10 mx-auto grid max-w-7xl gap-10 px-6 py-20 lg:px-10">
-        <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[var(--color-brass-300)]">
-          Tax preparation &middot; planning &middot; representation
-        </p>
-        <h1 className="max-w-3xl font-display text-5xl font-light leading-[1.05] text-[var(--color-parchment-50)] sm:text-6xl lg:text-7xl">
-          We secure legacies,
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="mb-3 text-5xl font-medium leading-tight tracking-[-2px] text-foreground md:text-7xl md:leading-[1.15]"
+        >
+          Your Taxes.
           <br />
-          <span className="italic text-[var(--color-brass-300)]">one return at a time.</span>
-        </h1>
-        <p className="max-w-xl text-lg text-[var(--color-parchment-200)]/80">
-          Bright Tax Solutions has guided entrepreneurs, medical practices, and
-          growing businesses through 35+ years of tax season — with the same
-          warmth of a family advisor and the precision of a seasoned firm.
-        </p>
+          One Clear{" "}
+          <span className="font-serif font-normal italic">Overview</span>.
+        </motion.h1>
 
-        <div className="flex flex-wrap items-center gap-4">
-          <AnimatedButton href="#contact" variant="primary">
-            Book a Consultation
-          </AnimatedButton>
-          <AnimatedButton href="#services" variant="outline">
-            Explore Services
-          </AnimatedButton>
-        </div>
-      </div>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="mb-8 text-lg font-normal leading-6 opacity-90"
+          style={{ color: "var(--hero-subtitle)" }}
+        >
+          Bright Tax Solutions helps businesses track filings, deductions,
+          <br />
+          and deadlines with precision — for 35+ years.
+        </motion.p>
 
-      <div className="absolute inset-x-0 bottom-0 z-10 hidden justify-center pb-3 sm:flex">
-        <div className="flex h-9 w-5 items-start justify-center rounded-full border border-[var(--color-parchment-50)]/30 p-1">
-          <div className="h-1.5 w-1.5 animate-bounce rounded-full bg-[var(--color-brass-300)]" />
-        </div>
-      </div>
+        <motion.a
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          whileHover={{ scale: 1.03 }}
+          whileTap={{ scale: 0.98 }}
+          href="#contact"
+          className="rounded-full bg-foreground px-8 py-3.5 text-base font-medium text-background"
+        >
+          Book a Free Consultation
+        </motion.a>
+      </motion.div>
+
+      {/* Dashboard + video area — full viewport width */}
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.4 }}
+        className="relative z-10 mt-12 w-screen"
+        style={{ marginLeft: "calc(-50vw + 50%)", aspectRatio: "16/9" }}
+      >
+        <video
+          src={VIDEO_URL}
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+        <motion.div
+          style={{ y: dashY }}
+          className="absolute inset-0 z-20 flex items-center justify-center"
+        >
+          <img
+            src="/hero-dashboard.svg"
+            alt="Bright Tax client dashboard preview"
+            className="w-[90%] max-w-5xl rounded-2xl"
+            style={{ mixBlendMode: "luminosity" }}
+            draggable={false}
+          />
+        </motion.div>
+        <div className="pointer-events-none absolute bottom-0 left-0 right-0 z-30 h-40 bg-gradient-to-t from-background to-transparent" />
+      </motion.div>
     </section>
   );
 }

@@ -2,23 +2,28 @@ const CLIENT_PORTAL_URL = "#client-portal-placeholder"; // TODO: swap for real p
 
 export default function Footer() {
   return (
-    <footer className="bg-[var(--color-forest-950)] px-6 py-12 lg:px-10">
-      <div className="mx-auto flex max-w-6xl flex-col items-center gap-6 border-t border-white/10 pt-10 text-center sm:flex-row sm:justify-between sm:text-left">
+    <footer className="bg-background px-8 py-12 md:px-28">
+      <div className="mx-auto flex max-w-6xl flex-col items-center gap-6 border-t border-border pt-10 text-center sm:flex-row sm:justify-between sm:text-left">
         <div>
-          <p className="font-display text-lg text-[var(--color-parchment-50)]">Bright Tax Solutions</p>
-          <p className="mt-1 text-sm text-[var(--color-parchment-200)]/50">
+          <div className="flex items-center justify-center gap-2.5 sm:justify-start">
+            <img src="/logo.svg" alt="" className="h-6 w-6" />
+            <p className="text-lg font-bold tracking-tight text-foreground">
+              Bright Tax Solutions
+            </p>
+          </div>
+          <p className="mt-1 text-sm text-muted-foreground">
             © {new Date().getFullYear()} Bright Tax Solutions. All rights reserved.
           </p>
         </div>
-        <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-[var(--color-parchment-200)]/70">
-          <a href="#services" className="hover:text-[var(--color-brass-300)]">Services</a>
-          <a href="#about" className="hover:text-[var(--color-brass-300)]">About</a>
-          <a href="#contact" className="hover:text-[var(--color-brass-300)]">Contact</a>
+        <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-muted-foreground">
+          <a href="#services" className="transition-colors hover:text-foreground">Services</a>
+          <a href="#about" className="transition-colors hover:text-foreground">About</a>
+          <a href="#contact" className="transition-colors hover:text-foreground">Contact</a>
           <a
             href={CLIENT_PORTAL_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[var(--color-brass-300)] hover:text-[var(--color-brass-400)]"
+            className="font-medium text-foreground transition-opacity hover:opacity-80"
           >
             Client Portal →
           </a>

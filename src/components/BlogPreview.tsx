@@ -8,15 +8,17 @@ const POSTS = [
 
 export default function BlogPreview() {
   return (
-    <section id="blog" className="bg-[var(--color-parchment-50)] px-6 py-28 lg:px-10">
+    <section id="blog" className="bg-background px-8 py-28 md:px-28">
       <div className="mx-auto max-w-6xl">
         <ScrollReveal className="flex flex-wrap items-end justify-between gap-6">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[var(--color-brass-500)]">
+            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-muted-foreground">
               From the blog
             </p>
-            <h2 className="mt-4 font-display text-4xl font-light text-[var(--color-forest-900)] sm:text-5xl">
-              Tax insight, in plain English.
+            <h2 className="mt-4 text-4xl font-medium tracking-[-1px] text-foreground sm:text-5xl">
+              Tax insight, in{" "}
+              <span className="font-serif font-normal italic">plain</span>{" "}
+              English.
             </h2>
           </div>
         </ScrollReveal>
@@ -26,15 +28,15 @@ export default function BlogPreview() {
             <ScrollReveal
               key={post.title}
               delay={((i % 3) + 1) as 1 | 2 | 3}
-              className="group cursor-pointer rounded-2xl border border-[var(--color-forest-700)]/10 bg-white p-7 transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_24px_48px_-20px_rgba(12,31,24,0.25)]"
+              className="group cursor-pointer rounded-2xl border border-border bg-card p-7 transition-all duration-500 hover:-translate-y-1.5 hover:border-foreground/40"
             >
-              <span className="text-xs font-semibold uppercase tracking-widest text-[var(--color-brass-500)]">
+              <span className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
                 {post.tag}
               </span>
-              <h3 className="mt-4 font-display text-xl text-[var(--color-forest-900)] transition-colors group-hover:text-[var(--color-forest-700)]">
+              <h3 className="mt-4 text-xl font-semibold text-foreground transition-colors group-hover:text-foreground/80">
                 {post.title}
               </h3>
-              <p className="mt-6 text-sm text-[var(--color-ink-500)]">{post.date}</p>
+              <p className="mt-6 text-sm text-muted-foreground">{post.date}</p>
             </ScrollReveal>
           ))}
         </div>

@@ -14,16 +14,18 @@ const SECTORS = [
 
 export default function Services() {
   return (
-    <section id="services" className="relative bg-[var(--color-parchment-50)] px-6 py-28 lg:px-10">
+    <section id="services" className="bg-background px-8 py-28 md:px-28">
       <div className="mx-auto max-w-6xl">
         <ScrollReveal>
-          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[var(--color-brass-500)]">
+          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-muted-foreground">
             Who we serve
           </p>
-          <h2 className="mt-4 max-w-2xl font-display text-4xl font-light text-[var(--color-forest-900)] sm:text-5xl">
-            Every service, clear at a glance.
+          <h2 className="mt-4 max-w-2xl text-4xl font-medium tracking-[-1px] text-foreground sm:text-5xl">
+            Every service,{" "}
+            <span className="font-serif font-normal italic">clear</span> at a
+            glance.
           </h2>
-          <p className="mt-4 max-w-xl text-[var(--color-ink-700)]">
+          <p className="mt-4 max-w-xl text-muted-foreground">
             From first-year founders to decades-old practices, our nine
             specialty tracks mean your tax strategy is built by people who
             already understand your industry.
@@ -35,19 +37,19 @@ export default function Services() {
             <ScrollReveal
               key={sector.name}
               delay={((i % 3) + 1) as 1 | 2 | 3}
-              className="group relative overflow-hidden rounded-2xl border border-[var(--color-forest-700)]/10 bg-white p-7 transition-all duration-500 hover:-translate-y-1.5 hover:border-[var(--color-brass-400)]/50 hover:shadow-[0_24px_48px_-20px_rgba(12,31,24,0.25)]"
+              className="group relative overflow-hidden rounded-2xl border border-border bg-card p-7 transition-all duration-500 hover:-translate-y-1.5 hover:border-foreground/40"
             >
               <div
                 className="pointer-events-none absolute -right-6 -top-6 h-24 w-24 rounded-full opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100"
-                style={{ background: "radial-gradient(circle, rgba(201,154,68,0.35), transparent 70%)" }}
+                style={{ background: "radial-gradient(circle, rgba(255,255,255,0.15), transparent 70%)" }}
               />
-              <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-[var(--color-forest-900)] text-lg text-[var(--color-brass-300)] transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6">
+              <span className="flex h-11 w-11 items-center justify-center rounded-xl border border-border bg-background text-lg text-foreground transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6">
                 {sector.icon}
               </span>
-              <h3 className="mt-5 font-display text-xl font-medium text-[var(--color-forest-900)]">
+              <h3 className="mt-5 text-xl font-semibold text-foreground">
                 {sector.name}
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-[var(--color-ink-500)]">
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                 {sector.blurb}
               </p>
             </ScrollReveal>

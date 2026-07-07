@@ -10,15 +10,14 @@ interface CommonProps {
 }
 
 const base =
-  "btn-anim inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold tracking-wide transition-all duration-300 ease-[cubic-bezier(.19,1,.22,1)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2";
+  "inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold tracking-wide transition-all duration-300 hover:scale-[1.03] active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground";
 
 const variants: Record<Variant, string> = {
-  primary:
-    "bg-[var(--color-forest-800)] text-[var(--color-parchment-50)] shadow-[0_10px_30px_-10px_rgba(12,31,24,0.55)] hover:-translate-y-0.5 hover:shadow-[0_18px_40px_-12px_rgba(12,31,24,0.6)] focus-visible:outline-[var(--color-brass-500)]",
+  primary: "bg-foreground text-background hover:opacity-90",
   outline:
-    "border border-[var(--color-forest-700)]/30 bg-white/40 text-[var(--color-forest-800)] backdrop-blur-sm hover:-translate-y-0.5 hover:bg-white/70 hover:border-[var(--color-forest-700)]/60 focus-visible:outline-[var(--color-forest-700)]",
+    "border border-border bg-transparent text-foreground hover:border-foreground/60 hover:bg-foreground/5",
   portal:
-    "border border-[var(--color-brass-400)]/70 bg-gradient-to-br from-[var(--color-brass-300)]/25 via-white/10 to-[var(--color-brass-500)]/20 text-[var(--color-forest-900)] backdrop-blur-md shadow-[0_6px_18px_-8px_rgba(201,154,68,0.55)] hover:-translate-y-0.5 hover:shadow-[0_14px_30px_-10px_rgba(201,154,68,0.65)] focus-visible:outline-[var(--color-brass-500)]",
+    "liquid-glass text-foreground hover:opacity-90",
 };
 
 interface ButtonAsButton extends CommonProps, ButtonHTMLAttributes<HTMLButtonElement> {
